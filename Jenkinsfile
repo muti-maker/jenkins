@@ -12,7 +12,7 @@ pipeline {
                 sh 'node --version'
                 sh '''
                     cat number.txt || echo "?"
-                    echo "1" > number.txt
+                    echo "2" > number.txt
                     ls -alh
                 '''
                 retry(2) {
