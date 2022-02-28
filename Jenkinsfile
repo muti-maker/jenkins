@@ -11,7 +11,7 @@ pipeline {
                     node --version
                 '''
                 retry(2) {
-                    sh 'echo hostname'
+                    sh 'hostname'
                 }
                 timeout(time: 3, unit: 'MINUTES') {
                     sh 'sleep 2'
