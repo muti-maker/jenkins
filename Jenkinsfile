@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'hostname'
+                sh 'node --version'
                 sh '''
                     echo "Tutorial 2"
                     ls -alh
