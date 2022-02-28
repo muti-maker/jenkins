@@ -1,19 +1,14 @@
 pipeline {
-    agent any
+    agent { dockerfile true }
     stages {
         stage('build') {
-            agent {
-                docker {
-                    image 'node:16'
-                    reuseNode true
-                }
-            }
             steps {
-                sh 'node --version'
                 sh '''
                     cat number.txt || echo "?"
                     echo "2" > number.txt
                     ls -alh
+                    svn --version
+                    node --version
                 '''
                 retry(2) {
                     sh 'echo hostname'
