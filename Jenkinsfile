@@ -11,7 +11,7 @@ pipeline {
                     ls -alh
                 '''
                 retry(2) {
-                    sh 'echo 1'
+                    sh 'echo hostname'
                 }
                 timeout(time: 3, unit: 'MINUTES') {
                     sh 'sleep 2'
